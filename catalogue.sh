@@ -5,10 +5,9 @@ mkdir /app
 curl -o /tmp/catalogue.zip https://roboshop-artifacts.s3.amazonaws.com/catalogue.zip
 cd /app
 unzip /tmp/catalogue.zip
-cd /app
 npm install
 cp catalogue.service /etc/systemd/system/catalogue.service
 systemctl daemon-reload
 systemctl enable catalogue
 systemctl start catalogue
-mongo --host MONGODB-SERVER-IPADDRESS </app/schema/catalogue.js
+mongo --host mongodb-dev.gmr.dev.online </app/schema/catalogue.js
